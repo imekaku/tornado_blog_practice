@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block header %}
+<title>{{ page_title }}</title>
+{% end %}
+
+{% block body %}
+<h2>If you want to login, please input your name and password.<h2>
+<form action="/login", method="post">
+	username: <input type="text", name="username">
+	password: <input type="password", name="password">
+	<input type="submit" value="Submit">
+</form>
+{% end %}
