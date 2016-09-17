@@ -11,7 +11,7 @@ class RegisterHandler(tornado.web.RequestHandler):
         username = self.get_argument("username")
         password = self.get_argument("password")
         self.insertIntoDatabase(username, password)
-        self.render("welcome.html", page_title = "Welcome Page")
+        self.render("welcome.html", username=username, page_title = "Welcome Page")
 
     def insertIntoDatabase(self, username, password):
         conn = MySQLdb.connect(host='localhost', user='root', passwd='123456', db='tornado_blog_01')
